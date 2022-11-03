@@ -1,0 +1,15 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= link_to "Sobre el club", about_path %>
+
+<p>Go to <%= link_to "Store", store_path %></p>
+<% if current_spree_user %>
+    <p>Logged in as <%= current_spree_user.email %></p>
+    <%= link_to "Logout", logout_path, data: {
+        turbo_method: "delete"
+    } %>
+<% else %>
+    <p>Not logged in</p>
+    <%= link_to "Login", login_path %>
+    <%= link_to "Create Account", signup_path %>
+<% end %>
