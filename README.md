@@ -47,6 +47,10 @@ bundle exec rails g solidus_stripe:install
 **** ver tema clave secreta
 https://github.com/solidusio/solidus_stripe
 
+#### empezando blog
+https://www.youtube.com/watch?v=TlgSp2XPCY4&list=PL3mtAHT_eRezB9fnoIcKS4vYFjm23vddb&index=1
+
+cambiar tittle por title
 
 
 
