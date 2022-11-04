@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   # get 'pages/home'
   get 'home/index', to: 'home#index', as: 'store' 
   # This line mounts Solidus's routes at the root of your application.
