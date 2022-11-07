@@ -10,7 +10,7 @@
 # Spree::Core::Engine.load_seed if defined?(Spree::Core)
 # Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 #####
-
+Spree::User.create(email: "test@test.com", password: "pas123", password_confirmation: "pas123")
 10.times do |x|
-    Post.create(tittle: "Title #{x}", body: "Body #{x} words go here")
+    Post.create(title: "Title #{x}", body: "Body #{x} words go here", spree_user_id: Spree::User.first.id)
 end

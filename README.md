@@ -50,10 +50,14 @@ https://github.com/solidusio/solidus_stripe
 #### empezando blog
 https://www.youtube.com/watch?v=TlgSp2XPCY4&list=PL3mtAHT_eRezB9fnoIcKS4vYFjm23vddb&index=1
 
-cambiar tittle por title
 
 
+cambiar tittle por title:
+rails g migration RenameTittleToTitleInPost
+editar la migration
+    rename_column :posts, :tittle, :title
 
 
-1- pendiente: arreglar el error de "peso"
-2- guardar claves secretas de stripe
+1- guardar claves secretas de stripe
+2- color azul de cda
+3- 

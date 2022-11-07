@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_04_171304) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_07_170347) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,10 +75,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_171304) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "tittle"
+    t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "views", default: 0
+    t.bigint "spree_user_id", null: false
+    t.index ["spree_user_id"], name: "index_posts_on_spree_user_id"
   end
 
   create_table "spree_addresses", id: :serial, force: :cascade do |t|
@@ -1228,6 +1231,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_171304) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "posts", "spree_users"
   add_foreign_key "spree_promotion_code_batches", "spree_promotions", column: "promotion_id"
   add_foreign_key "spree_promotion_codes", "spree_promotion_code_batches", column: "promotion_code_batch_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_categories", column: "tax_category_id"
