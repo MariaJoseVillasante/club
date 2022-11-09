@@ -72,6 +72,7 @@ group :test do
 end
 
 gem "solidus_auth_devise"
+gem "devise"
 
 gem "solidus_core", "~> 3.2"
 gem "solidus_backend", "~> 3.2"

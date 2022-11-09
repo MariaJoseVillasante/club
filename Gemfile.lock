@@ -460,6 +460,7 @@ DEPENDENCIES
   capybara-screenshot (~> 1.0)
   database_cleaner (~> 1.7)
   debug
+  devise
   factory_bot (>= 4.8)
   factory_bot_rails
   ffaker (~> 2.13)

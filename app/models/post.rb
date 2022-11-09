@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
     validates :title, presence: true, length: { minimum: 5, maximum: 50}
     validates :body, presence: true, length: { minimum: 10, maximun: 100}
-    belongs_to :spree_user
+    belongs_to :user
+    
 end

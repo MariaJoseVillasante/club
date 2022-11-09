@@ -1,9 +1,9 @@
 <div id="<%= dom_id post %>">
   <h2><%= post.title %></h2>
-  <h4>posted by <%= post.spree_user_id %></h4>
+  <h4>posted by user #<%= post.spree_user_id %></h4>
   <h6><%= pluralize(post.views, "view")  %></h6>
   <div>
     <%= post.body %>
   </div>
-
+<p>Tu mail es: <%= current_spree_user.email if signed_in? %></p>
 </div>

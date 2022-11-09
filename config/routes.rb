@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :posts
   # get 'pages/home'
   get 'home/index', to: 'home#index', as: 'store' 

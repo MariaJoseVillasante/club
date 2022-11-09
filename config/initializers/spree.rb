@@ -35,7 +35,7 @@ Spree.config do |config|
   # Admin:
 
   # Custom logo for the admin
-  # config.admin_interface_logo = "logo/solidus.svg"
+  config.admin_interface_logo = "cropped-Escudo_CDA_Definitivo.png"
 
   # Gateway credentials can be configured statically here and referenced from
   # the admin. They can also be fully configured from the admin.
@@ -76,7 +76,12 @@ Spree::Api::Config.configure do |config|
   config.requires_authentication = true
 end
 
-Spree.user_class = "Spree::LegacyUser"
+#Spree.user_class = "User"
+Spree.user_class = "User"
+
+# To enable Devise's Confirmable module, which will send the user an email with a link to confirm their account, you must do the following:
+# Add this line to an initializer in your Rails project (typically config/initializers/spree.rb):
+Spree::Auth::Config[:confirmable] = true
 
 # Rules for avoiding to store the current path into session for redirects
 # When at least one rule is matched, the request path will not be stored
@@ -85,3 +90,6 @@ Spree.user_class = "Spree::LegacyUser"
 # the class name:
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
+Rails.application.config.to_prepare do
+  require_dependency 'spree/authentication_helpers'
+end
